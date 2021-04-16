@@ -1,0 +1,63 @@
+<%- | Hash $options | -%>
+# THIS FILE IS CONTROLLED BY PUPPET
+
+@@define DBDIR <%= $options['db_dir'] %>
+@@define LOGDIR <%= $options['log_dir'] %>
+
+# The location of the database to be read.
+database=file:@@{DBDIR}/aide.db.gz
+
+# The location of the database to be written.
+#database_out=sql:host:port:database:login_name:passwd:table
+#database_out=file:aide.db.new
+database_out=file:@@{DBDIR}/aide.db.new.gz
+
+# Whether to gzip the output to database.
+gzip_dbout=yes
+
+# Default.
+verbose=<%= $options['verbosity'] %>
+
+<% $options['report_urls'].each | $item | { -%>
+report_url=<%= $item %>
+<% } -%>
+
+# These are the default rules.
+#
+#p:      permissions
+#i:      inode:
+#n:      number of links
+#u:      user
+#g:      group
+#s:      size
+#b:      block count
+#m:      mtime
+#a:      atime
+#c:      ctime
+#S:      check for growing size
+#acl:           Access Control Lists
+#selinux        SELinux security context
+#xattrs:        Extended file attributes
+#md5:    md5 checksum
+#sha1:   sha1 checksum
+#sha256:        sha256 checksum
+#sha512:        sha512 checksum
+#rmd160: rmd160 checksum
+#tiger:  tiger checksum
+
+#haval:  haval checksum (MHASH only)
+#gost:   gost checksum (MHASH only)
+#crc32:  crc32 checksum (MHASH only)
+#whirlpool:     whirlpool checksum (MHASH only)
+
+<% $options['rules'].each | $item | { -%>
+<%= $item %>
+<% } -%>
+
+# Next decide what directories/files you want in the database. Aide
+# uses a first match system. Put file specific instructions before generic
+# matches. e.g. Put file matches before directories.
+
+<% $options['checks'].each | $item | { -%>
+<%= $item %>
+<% } -%>

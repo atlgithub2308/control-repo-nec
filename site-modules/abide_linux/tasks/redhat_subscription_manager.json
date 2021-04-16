@@ -1,0 +1,74 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Register a system with RedHat subscription manager",
+  "input_method": "stdin",
+  "implementations": [
+    { "name": "redhat_subscription_manager.rb", "requirements": ["shell"] }
+  ],
+  "parameters": {
+    "username": {
+      "description": "Username for account which is registering the system",
+      "type": "Optional[String]"
+    },
+    "password": {
+      "description": "user account password",
+      "type": "Optional[String]",
+      "sensitive": true
+    },
+    "serverurl": {
+      "description": "Another host to register with instead of subscription.rhn.redhat.com",
+      "type": "Optional[String]"
+    },
+    "baseurl": {
+      "description": "the name of the content delivery service to configure the yum service to pull down packages",
+      "type": "Optional[String]"
+    },
+    "name": {
+      "description": "hostname to register",
+      "type": "Optional[String]"
+    },
+    "consumerid": {
+      "description": "existing system inventory id to re-register the system",
+      "type": "Optional[String]"
+    },
+    "activationkey": {
+      "description": "comma-separated list of product keys to redeem",
+      "type": "Optional[String]",
+      "sensitive": true
+    },
+    "auto_attach": {
+      "description": "automatically attaches the best-matched, compatible subscriptions to this system",
+      "type": "Optional[Boolean]"
+    },
+    "servicelevel": {
+      "description": "sets the service level (standard, premium, self-support) to use with subscriptions",
+      "type": "Optional[Enum[standard, premium, self-support]]"
+    },
+    "force": {
+      "description": "registers the system even if it is already registered",
+      "type": "Optional[Boolean]"
+    },
+    "org": {
+      "description": "registers the system to an organization",
+      "type": "Optional[String]"
+    },
+    "environment": {
+      "description": "registers the system to an environment within an organization",
+      "type": "Optional[String]"
+    },
+    "proxy": {
+      "description": "registers the system via a proxy server",
+      "type": "Optional[String]"
+    },
+    "proxyuser": {
+      "description": "If using proxy, the username to use with the proxy",
+      "type": "Optional[String]"
+    },
+    "proxypass": {
+      "description": "password for the proxy user",
+      "type": "Optional[String]",
+      "sensitive": true
+    }
+  }
+}

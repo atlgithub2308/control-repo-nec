@@ -1,0 +1,8 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Queries for services with established TCP / UDP connections",
+  "implementations": [
+    {"name": "query_listening_services.rb", "requirements": ["shell"]}
+  ]
+}

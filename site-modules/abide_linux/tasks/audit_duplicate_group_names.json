@@ -1,0 +1,8 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Finds and returns duplicate group names in /etc/group.",
+  "implementations": [
+    {"name": "audit_duplicate_group_names.rb", "requirements": ["shell"]}
+  ]
+}

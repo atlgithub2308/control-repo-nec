@@ -1,0 +1,26 @@
+fixtures:
+  forge_modules:
+    stdlib: 'puppetlabs-stdlib'
+    concat: 'puppetlabs-concat'
+    inifile: 'puppetlabs-inifile'
+    mount_providers: 'puppetlabs-mount_providers'
+    augeas_core: 'puppetlabs-augeas_core'
+    firewall: 'puppetlabs-firewall'
+    firewalld: 'puppet-firewalld'
+    logrotate: 'puppet-logrotate'
+    selinux: 'puppet-selinux'
+    systemd: 'camptocamp-systemd'
+    augeasproviders_core: 'herculesteam-augeasproviders_core'
+    augeasproviders_sysctl: 'herculesteam-augeasproviders_sysctl'
+    augeasproviders_grub: 'herculesteam-augeasproviders_grub'
+    augeasproviders_mounttab: 'herculesteam-augeasproviders_mounttab'
+    augeasproviders_shellvar: 'herculesteam-augeasproviders_shellvar'
+    augeasproviders_ssh: 'herculesteam-augeasproviders_ssh'
+    augeasproviders_pam: 'herculesteam-augeasproviders_pam'
+  repositories:
+    facts: 'https://github.com/puppetlabs/puppetlabs-facts.git'
+    provision: 'https://github.com/puppetlabs/provision.git'
+    puppet_agent: 'https://github.com/puppetlabs/puppetlabs-puppet_agent.git'
+    translate: 'https://github.com/puppetlabs/puppetlabs-translate.git'
+  symlinks:
+    abide_linux: "#{source_dir}"

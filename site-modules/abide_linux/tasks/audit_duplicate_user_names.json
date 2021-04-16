@@ -1,0 +1,9 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Finds and returns duplicate user names in /etc/passwd.",
+  "implementations": [
+    {"name": "audit_duplicate_user_names.rb", "requirements": ["shell"]}
+  ]
+}
+

@@ -1,0 +1,8 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Returns the last password change date for all users",
+  "implementations": [
+    {"name": "audit_pw_change_date.rb", "requirements": ["shell"]}
+  ]
+}

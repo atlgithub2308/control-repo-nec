@@ -1,0 +1,8 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Queries for RPM GPG keys",
+  "implementations": [
+    {"name": "query_rpm_gpg_keys.rb", "requirements": ["shell"]}
+  ]
+}

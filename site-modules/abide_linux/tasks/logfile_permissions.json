@@ -1,0 +1,5 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Removes group wx perms and other rwx perms from files in /var/log"
+}

@@ -1,0 +1,9 @@
+<%- | Hash $settings | -%>
+# MANAGED BY PUPPET
+
+<%- $settings.each | String $key, $val | { -%>
+<%- if $val !~ Undef { -%>
+<%= $key %> = <%= $val %>
+
+<%- } -%>
+<%- } -%>

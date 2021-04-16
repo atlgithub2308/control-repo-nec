@@ -1,0 +1,35 @@
+name: abide
+apply-settings:
+  evaltrace: true
+  log_level: debug
+  show_diff: true
+  trace: true
+format: human
+hiera-config: "./hiera.yaml"
+log:
+  console:
+    level: info
+save-rerun: false
+plans:
+  - abide::linux_users_and_groups
+tasks:
+  - abide::audit_pw_change_date
+  - abide::audit_sgid_executables
+  - abide::audit_suid_executables
+  - abide::audit_unowned_files_and_directories
+  - abide::audit_world_writable_files
+  - abide::logfile_permissions
+  - abide::query_gpg_keys
+  - abide::query_listening_services
+  - abide::query_yum_repos
+  - abide::enforce_user_passwords
+  - abide::root_path_integrity
+  - abide::root_uid
+  - abide::audit_user_homedir
+  - abide::audit_duplicate_gid
+  - abide::audit_duplicate_group_names
+  - abide::audit_duplicate_uid
+  - abide::audit_duplicate_user_names
+  - abide::audit_etcpasswd_groups
+  - abide::audit_shadow_group
+  - abide::redhat_subscription_manager

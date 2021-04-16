@@ -1,0 +1,8 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Finds and returns any users in the shadow group",
+  "implementations": [
+    {"name": "audit_shadow_group.rb", "requirements": ["shell"]}
+  ]
+}

@@ -1,0 +1,5 @@
+<% | Array[String] $users | %>
+# MANAGED BY PUPPET
+<%- $users.each | String $user | { %>
+<%= $user %>
+<%- } %>
