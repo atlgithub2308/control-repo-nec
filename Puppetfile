@@ -7,6 +7,7 @@ mod 'abide_linux',
   :ref => "main"
 mod 'abide_windows',
   :git => 'git@github.com:puppetlabs/puppetlabs-abide_windows.git'
+  :ref => "main"
 mod 'puppetlabs/inifile', '1.6.0'
 mod 'puppetlabs/stdlib',  '7.1.0'
 mod 'puppetlabs/concat',  '6.4.0'
