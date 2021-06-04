@@ -1,8 +1,0 @@
-{
-  "puppet_task_version": 1,
-  "supports_noop": false,
-  "description": "Returns a list of SUID executable files",
-  "implementations": [
-    {"name": "audit_suid_executables.rb", "requirements": ["shell"]}
-  ]
-}

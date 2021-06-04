@@ -1,8 +1,0 @@
-{
-  "puppet_task_version": 1,
-  "supports_noop": false,
-  "description": "Audits root path integrity. Must be run as root",
-  "implementations": [
-    {"name": "root_path_integrity.rb", "requirements": ["shell"]}
-  ]
-}

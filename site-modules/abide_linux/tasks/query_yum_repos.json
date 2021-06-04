@@ -1,8 +1,0 @@
-{
-  "puppet_task_version": 1,
-  "supports_noop": false,
-  "description": "Queries YUM repositories",
-  "implementations": [
-    {"name": "query_yum_repos.rb", "requirements": ["shell"]}
-  ]
-}

@@ -1,8 +1,0 @@
-{
-  "puppet_task_version": 1,
-  "supports_noop": false,
-  "description": "Finds groups that exist in /etc/passwd but do not exist in /etc/group",
-  "implementations": [
-    {"name": "audit_etcpasswd_groups.rb", "requirements": ["shell"]}
-  ]
-}

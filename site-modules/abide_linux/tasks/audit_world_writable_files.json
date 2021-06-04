@@ -1,8 +1,0 @@
-{
-  "puppet_task_version": 1,
-  "supports_noop": false,
-  "description": "Returns a list of any world-writable files",
-  "implementations": [
-    {"name": "audit_world_writable_files.rb", "requirements": ["shell"]}
-  ]
-}

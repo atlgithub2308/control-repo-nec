@@ -1,8 +1,0 @@
-{
-  "puppet_task_version": 1,
-  "supports_noop": false,
-  "description": "Finds duplicate UIDs in /etc/passwd and returns the UID and all users that use it",
-  "implementations": [
-    {"name": "audit_duplicate_uid.rb", "requirements": ["shell"]}
-  ]
-}

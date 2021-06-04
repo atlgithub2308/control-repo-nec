@@ -1,8 +1,0 @@
-{
-  "puppet_task_version": 1,
-  "supports_noop": false,
-  "description": "Returns a list of all unconfined services",
-  "implementations": [
-    {"name": "audit_unconfined_services.rb", "requirements": ["shell"]}
-  ]
-}
