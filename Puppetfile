@@ -3,7 +3,8 @@ forge 'https://forge.puppet.com'
 # Modules from the Puppet Forge
 # Versions should be updated to be the latest at the time you start
 mod 'abide_linux',
-  :git => 'git@github.com:puppetlabs/puppetlabs-abide_linux.git'
+  :git => 'git@github.com:puppetlabs/puppetlabs-abide_linux.git',
+  :ref => "main"
 #mod 'puppetlabs-abide_windows',
 #  :git => 'git@github.com:puppetlabs/puppetlabs-abide_windows.git'
 mod 'puppetlabs/inifile', '1.6.0'
