@@ -1,5 +1,7 @@
 ---
 puppet_enterprise::master::code_manager::git_settings:
   repositories:
+    - remote: "git@github.com:puppetlabs/sse-team-control-repo.git"
+      private_key: "/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa"
     - remote: "git@github.com:puppetlabs/puppetlabs-abide_linux.git"
       private_key: "/etc/puppetlabs/puppetserver/ssh/id-abide_linux.rsa"
