@@ -5,8 +5,8 @@ forge 'https://forge.puppet.com'
 mod 'abide_linux',
   :git => 'git@github.com:puppetlabs/puppetlabs-abide_linux.git',
   :ref => "main"
-#mod 'puppetlabs-abide_windows',
-#  :git => 'git@github.com:puppetlabs/puppetlabs-abide_windows.git'
+mod 'abide_windows',
+  :git => 'git@github.com:puppetlabs/puppetlabs-abide_windows.git'
 mod 'puppetlabs/inifile', '1.6.0'
 mod 'puppetlabs/stdlib',  '7.1.0'
 mod 'puppetlabs/concat',  '6.4.0'

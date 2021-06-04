@@ -5,3 +5,5 @@ puppet_enterprise::master::code_manager::git_settings:
       private_key: "/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa"
     - remote: "git@github.com:puppetlabs/puppetlabs-abide_linux.git"
       private_key: "/etc/puppetlabs/puppetserver/ssh/id-abide_linux.rsa"
+    - remote: "git@github.com:puppetlabs/puppetlabs-abide_windows.git"
+      private_key: "/etc/puppetlabs/puppetserver/ssh/id-abide_windows.rsa"
