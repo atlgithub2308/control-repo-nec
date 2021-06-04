@@ -8,7 +8,7 @@ mod 'abide_linux',
 #mod 'puppetlabs-abide_windows',
 #  :git => 'git@github.com:puppetlabs/puppetlabs-abide_windows.git'
 mod 'puppetlabs/inifile', '1.6.0'
-mod 'puppetlabs/stdlib',  '4.13.1'
+mod 'puppetlabs/stdlib',  '7.1.0'
 mod 'puppetlabs/concat',  '6.4.0'
 mod 'puppetlabs/puppet_agent', '4.0.0'
 mod 'puppetlabs/mount_providers', '2.0.1'
