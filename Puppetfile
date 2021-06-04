@@ -31,5 +31,5 @@ mod 'puppetlabs-pwshlib', '0.7.4'
 mod 'puppetlabs-powershell', '5.0.0'
 mod 'dsc-auditpolicydsc', '1.4.0-0-1'
 mod 'dsc-networkingdsc', '8.1.0-0-1'
-mod 'dsc-securitypolicydsc', '2.10.0-0-2'
+mod 'dsc-securitypolicydsc', '2.10.0-0-1'
 
