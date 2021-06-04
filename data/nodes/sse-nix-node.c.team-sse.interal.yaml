@@ -1,0 +1,6 @@
+---
+abide_linux::benchmark: "cis"
+abide_linux::config:
+  profile: "server"
+  level: "1"
+
