@@ -8,4 +8,5 @@ abide_windows::config:
   control_configs:
     c2_2_9:
       users:
-        "SSE_WIN_NODE\heston_snodgrass"
+        'SSE_WIN_NODE\heston_snodgrass'
+
