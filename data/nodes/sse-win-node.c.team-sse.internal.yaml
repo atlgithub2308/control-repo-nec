@@ -5,4 +5,7 @@ abide_windows::config:
   level: "1"
   ignore:
     - 'c2_3_1_1'
-
+  control_configs:
+    c2_2_9:
+      users:
+        "SSE_WIN_NODE\heston_snodgrass"
