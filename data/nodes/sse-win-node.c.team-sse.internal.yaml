@@ -3,4 +3,6 @@ abide_windows::benchmark: "cis"
 abide_windows::config:
   profile: "member_server"
   level: "1"
+  ignore:
+    - 'c2_3_1_1'
 
