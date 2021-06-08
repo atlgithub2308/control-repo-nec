@@ -9,7 +9,7 @@ mod 'abide_windows',
   :git => 'git@github.com:puppetlabs/puppetlabs-abide_windows.git',
   :ref => 'main'
 mod 'puppetlabs/comply', '1.0.5'
-mod 'puppetlabs/archive', '4.6.0'
+mod 'puppet/archive', '4.6.0'
 mod 'puppetlabs/chocolatey', '5.2.1'
 mod 'puppetlabs/inifile', '4.4.0'
 mod 'puppetlabs/java', '6.5.0'
