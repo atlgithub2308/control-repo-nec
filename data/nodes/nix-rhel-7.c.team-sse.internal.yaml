@@ -1,0 +1,9 @@
+---
+abide_linux::benchmark: 'cis'
+abide_linux::config:
+  profile: 'server'
+  level: '1'
+  ignore:
+    - 'ensure_message_of_the_day_is_configured_properly'
+    - 'ensure_selinux_is_installed'
+
