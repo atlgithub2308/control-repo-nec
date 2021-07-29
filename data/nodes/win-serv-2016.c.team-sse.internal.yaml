@@ -3,4 +3,7 @@ abide_windows::benchmark: 'cis'
 abide_windows::config:
   ignore:
     - 'c2_3_1_1'
-
+  control_configs:
+    c2_2_26:
+      users:
+        - 'Builtin\\Guests'
