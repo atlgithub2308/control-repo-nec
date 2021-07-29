@@ -10,6 +10,8 @@ mod 'abide_windows',
   :ref => 'main'
 mod 'puppetlabs/comply', '1.0.5'
 mod 'puppet/archive', '4.6.0'
+mod 'puppetlabs/apt', '8.1.0'
+mod 'puppetlabs/facts', '1.4.0'
 mod 'puppetlabs/chocolatey', '5.2.1'
 mod 'puppetlabs/inifile', '4.4.0'
 mod 'puppetlabs/java', '6.5.0'
