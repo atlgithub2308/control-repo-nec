@@ -6,4 +6,4 @@ abide_windows::config:
   control_configs:
     c2_2_26:
       users:
-        - 'Builtin\\Guests'
+        - 'BUILTIN\Guests'
