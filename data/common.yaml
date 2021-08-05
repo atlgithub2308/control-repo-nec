@@ -10,5 +10,7 @@ puppet_enterprise::master::code_manager::git_settings:
  
 puppet_enterprise::master::code_manager::forge_settings:
   authorization_token: 'Bearer 1234567890098765321'
+pe_r10k::forge_settings:
+  authorization_token: 'Bearer 1234567890098765321'
 abide_windows::privileged_user: null
 abide_windows::privileged_pass: null
