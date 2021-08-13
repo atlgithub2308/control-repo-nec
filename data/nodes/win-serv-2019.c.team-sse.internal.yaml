@@ -1,6 +1,6 @@
 ---
-abide_windows::benchmark: 'cis'
-abide_windows::config:
+cen_windows::benchmark: 'cis'
+cem_windows::config:
   ignore:
     - 'c2_3_1_1'
   control_configs:

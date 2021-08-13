@@ -1,5 +1,5 @@
 ---
-abide_linux::benchmark: 'cis'
-abide_linux::config:
+cem_linux::benchmark: 'cis'
+cem_linux::config:
   profile: 'server'
   level: '1'
