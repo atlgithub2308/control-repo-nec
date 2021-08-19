@@ -1,5 +1,5 @@
 ---
-cen_windows::benchmark: 'cis'
+cem_windows::benchmark: 'cis'
 cem_windows::config:
   ignore:
     - 'c2_3_1_1'
