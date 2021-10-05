@@ -2,12 +2,12 @@ forge 'https://forge.puppet.com'
 
 # Modules from the Puppet Forge
 # Versions should be updated to be the latest at the time you start
-#mod 'cem_linux',
-#  :git => 'git@github.com:puppetlabs/puppetlabs-cem_linux.git',
-#  :ref => 'main'
-#mod 'cem_windows',
-#  :git => 'git@github.com:puppetlabs/puppetlabs-cem_windows.git',
-#  :ref => 'main'
+mod 'cem_linux',
+  :git => 'git@github.com:puppetlabs/puppetlabs-cem_linux.git',
+  :ref => 'main'
+mod 'cem_windows',
+  :git => 'git@github.com:puppetlabs/puppetlabs-cem_windows.git',
+  :ref => 'main'
 mod 'puppetlabs/comply', '2.0.0'
 mod 'puppet/archive', '5.0.0'
 mod 'puppetlabs/apt', '8.1.0'
@@ -31,6 +31,6 @@ mod 'puppetlabs-powershell', '5.0.0'
 mod 'dsc-auditpolicydsc', '1.4.0-0-1'
 mod 'dsc-networkingdsc', '8.1.0-0-1'
 mod 'dsc-securitypolicydsc', '2.10.0-0-3'
-mod 'puppetlabs-cem_linux'
-mod 'puppetlabs-cem_windows'
+#mod 'puppetlabs-cem_linux'
+#mod 'puppetlabs-cem_windows'
 
