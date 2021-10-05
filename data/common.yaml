@@ -9,5 +9,6 @@ puppet_enterprise::master::code_manager::git_settings:
       private_key: "/etc/puppetlabs/puppetserver/ssh/id-abide_windows.rsa"
  
 pe_r10k::forge_settings:
+  baseurl: 'https://forgeapi.puppet.com'
   authorization_token: 'Bearer 1a5659e21d83616a1ab75fb334846dae243d39c709833341eaa5548753fc8342'
 
