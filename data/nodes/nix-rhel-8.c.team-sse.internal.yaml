@@ -3,3 +3,10 @@ cem_linux::benchmark: 'cis'
 cem_linux::config:
   profile: 'server'
   level: '2'
+  control_configs:
+    ensure_permissions_on_etcsshsshd_config_are_configured:
+      allow_users:
+        - heston_snodgrass
+        - curtis_edge
+        - tu_vu
+
