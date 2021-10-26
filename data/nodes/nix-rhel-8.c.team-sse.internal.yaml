@@ -6,7 +6,7 @@ cem_linux::config:
   control_configs:
     ensure_permissions_on_etcsshsshd_config_are_configured:
       allow_users:
-        - heston_snodgrass
-        - curtis_edge
-        - tu_vu
+        - heston_snodgrass_puppet_com
+        - curtis_edge_puppet_com
+        - tu_vu_puppet_com
 
