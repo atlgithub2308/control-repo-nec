@@ -3,10 +3,16 @@ cem_linux::benchmark: 'cis'
 cem_linux::config:
   profile: 'server'
   level: '2'
+  use_authselect: true
+  authselect_profile: 'custom/cem_as_profile'
   control_configs:
     ensure_permissions_on_etcsshsshd_config_are_configured:
       allow_users:
         - heston_snodgrass_puppet_com
         - curtis_edge_puppet_com
         - tu_vu_puppet_com
+    create_custom_authselect_profile:
+      custom_profile_base: 'minimal'
+      profile_features:
+        - 'with-faillock'
 
