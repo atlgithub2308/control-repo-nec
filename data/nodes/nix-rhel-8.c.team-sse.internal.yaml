@@ -6,6 +6,8 @@ cem_linux::config:
   use_authselect: true
   authselect_profile: 'custom/cem_as_profile'
   control_configs:
+    ensure_system_wide_crypto_policy_is_future_or_fips:
+      system_crypto_policy: 'DEFAULT'
     ensure_permissions_on_etcsshsshd_config_are_configured:
       allow_users:
         - heston_snodgrass_puppet_com
