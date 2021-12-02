@@ -4,6 +4,8 @@ cem_windows::config:
   ignore:
     - 'c2_3_1_1'
   control_configs:
+    c1_1_2:
+      value: 0
     c2_2_21:
       users:
         - 'BUILTIN\Guests'
