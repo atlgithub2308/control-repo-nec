@@ -1,5 +1,7 @@
 ---
 cem_linux::benchmark: 'cis'
+cem_linux::regenerate_grub2_config: true
+cem_linux::grub2_superuser: root
 cem_linux::config:
   profile: 'server'
   level: '2'
