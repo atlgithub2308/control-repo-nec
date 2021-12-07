@@ -1,6 +1,7 @@
 ---
 cem_linux::benchmark: 'cis'
 cem_linux::set_grub2_password: true
+cem_linux::regenerate_grub2_config: true
 cem_linux::grub2_superuser: grub2su
 cem_linux::config:
   profile: 'server'
