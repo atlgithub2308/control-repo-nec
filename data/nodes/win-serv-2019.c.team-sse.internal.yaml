@@ -5,7 +5,7 @@ cem_windows::config:
     - 'c2_3_1_1'
   control_configs:
     c1_1_2:
-      value: 0
+      dsc_maximum_password_age: 0
     c2_2_21:
       users:
         - 'BUILTIN\Guests'
@@ -13,4 +13,4 @@ cem_windows::config:
       users:
         - 'BUILTIN\Guests'
 cem_windows::benchmarks::cis::allow_local_account_rdp: true
- 
+
