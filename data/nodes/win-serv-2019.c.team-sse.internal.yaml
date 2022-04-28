@@ -1,8 +1,16 @@
 ---
 cem_windows::benchmark: 'cis'
 cem_windows::config:
-  ignore:
-    - 'c2_3_1_1'
+  only:
+    - c1_1_1
+    - c1_1_2
+    - c1_1_3
+    - c1_1_4
+    - c1_1_5
+    - c1_1_6
+    - c1_2_1
+    - c1_2_2
+    - c1_2_3
   control_configs:
     c1_1_2:
       dsc_maximum_password_age: 0
