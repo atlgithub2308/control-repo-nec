@@ -2,6 +2,8 @@
 cem_windows::benchmark: 'cis'
 cem_windows::config:
   control_configs:
+    c18_9_45_4_1_2:
+      default_for_all_rules: 'Audit'
     c1_1_2:
       dsc_maximum_password_age: 0
     c2_2_21:
