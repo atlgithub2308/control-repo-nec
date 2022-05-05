@@ -1,6 +1,8 @@
 ---
 cem_windows::benchmark: 'cis'
 cem_windows::config:
+  ignore:
+    - 'c2_3_1_1'
   control_configs:
     c18_9_45_4_1_2:
       default_for_all_rules: 'Audit'
