@@ -7,7 +7,7 @@ mod 'cem_linux',
   :ref => 'main'
 mod 'cem_windows',
   :git => 'git@github.com:puppetlabs/puppetlabs-cem_windows.git',
-  :ref => 'CEM-323'
+  :ref => 'main'
 mod 'puppetlabs/comply', '2.2.2'
 mod 'puppet/archive', '6.0.2'
 mod 'puppetlabs/apt', '8.1.0'
