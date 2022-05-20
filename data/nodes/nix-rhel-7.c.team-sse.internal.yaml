@@ -4,6 +4,6 @@ cem_linux::regenerate_grub2_config: true
 cem_linux::config:
   profile: 'server'
   level: '2'
-cem_linux::control_configs:
-  ensure_auditd_is_installed:
-    space_left_action: 'syslog'
+  control_configs:
+    ensure_auditd_is_installed:
+      space_left_action: 'syslog'
