@@ -24,11 +24,4 @@ class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global
   include profile::cem_gha_runner_venv::nodejs
   include profile::cem_gha_runner_venv::python
   include profile::cem_gha_runner_venv::ruby
-
-  Class['profile::cem_gha_runner_venv::apt']
-  -> Class['profile::cem_gha_runner_venv::nodejs']
-  -> Class['profile::cem_gha_runner_venv::python']
-  -> Class['profile::cem_gha_runner_venv::java']
-  -> Class['profile::cem_gha_runner_venv::ruby']
-  -> Class['profile::cem_gha_runner_venv::gcloud']
 }
