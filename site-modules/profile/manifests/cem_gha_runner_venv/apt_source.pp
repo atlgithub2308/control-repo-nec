@@ -28,10 +28,14 @@ define profile::cem_gha_runner_venv::apt_source (
     mode    => '0644',
     content => $content,
   }
-  ~> profile::cem_gha_runner_venv::apt_key { $gpg_target:
-    url => $gpg_url,
+  if $gpg_target !~ Undef {
+    profile::cem_gha_runner_venv::apt_key { $gpg_target:
+      url     => $gpg_url,
+      require => File[$target_path],
+      before  => Exec['apt-get update -y'],
+    }
   }
-  ~> exec { 'apt-get update -y':
+  exec { 'apt-get update -y':
     path         => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
     provider     => 'shell',
     refresh_only => true,
