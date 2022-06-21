@@ -16,19 +16,19 @@ class profile::cem_gha_runner_venv::nodejs (
     cleanup => false,
   }
   ~> exec { "bash /opt/node_installer ${version}":
-    path         => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-    unless       => "[[ \"$(npm --version)\" =~ ^${version}.* ]]",
-    refresh_only => true,
-    provider     => 'shell',
+    path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
+    unless      => "[[ \"$(npm --version)\" =~ ^${version}.* ]]",
+    refreshonly => true,
+    provider    => 'shell',
   }
   $node_modules.each |$nm| {
     exec { "npm -g install ${nm}":
-      path         => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-      unless       => "npm -g ls | grep -q ${nm}",
-      provider     => 'shell',
-      refresh_only => true,
-      subscribe    => Exec["bash /opt/node_installer ${version}"],
-      before       => File['vercel symlink'],
+      path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
+      unless      => "npm -g ls | grep -q ${nm}",
+      provider    => 'shell',
+      refreshonly => true,
+      subscribe   => Exec["bash /opt/node_installer ${version}"],
+      before      => File['vercel symlink'],
     }
   }
   file { 'vercel symlink':

@@ -21,8 +21,8 @@ define profile::cem_gha_runner_venv::apt_key (
     mode   => '0644',
   }
   ~> exec { "apt-key --keyring ${target_path} add ${target_path}":
-    path         => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-    provider     => 'shell',
-    refresh_only => true,
+    path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
+    provider    => 'shell',
+    refreshonly => true,
   }
 }

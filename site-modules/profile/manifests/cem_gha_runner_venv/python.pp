@@ -42,9 +42,9 @@ class profile::cem_gha_runner_venv::python (
     install_options => [],
   }
   ~> exec { 'python3 -m pipx ensurepath':
-    path         => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-    refresh_only => true,
-    provider     => 'shell',
+    path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
+    refreshonly => true,
+    provider    => 'shell',
   }
   -> profile::cem_gha_runner_venv::env_var { 'export PATH="$HOME/.local/bin:$PATH':
     key   => 'PATH',
