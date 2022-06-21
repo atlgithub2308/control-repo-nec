@@ -46,7 +46,7 @@ profile::cem_gha_runner_venv::ruby::toolcache::versions:
     - '2.7.6'
     - '3.1.2'
 
-profile::cem_gha_runner_venv::nodej::version: '16'
+profile::cem_gha_runner_venv::nodejs::version: '16'
 profile::cem_gha_runner_venv::nodejs::node_modules:
   - grunt
   - gulp
