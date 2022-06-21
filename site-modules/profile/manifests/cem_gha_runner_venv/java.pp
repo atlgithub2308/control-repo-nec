@@ -9,8 +9,8 @@ class profile::cem_gha_runner_venv::java (
   String $default_version,
   Array[Hash] $repos,
   Array[Hash] $packages,
-  String $maven_version,
-  String $gradle_version,
+  Optional[Hash] $maven = undef,
+  Optional[Hash] $gradle = undef,
 ) inherits profile::cem_gha_runner_venv::global {
   include archive
   include stdlib
