@@ -35,7 +35,8 @@ define profile::cem_gha_runner_venv::apt_source (
       before  => Exec['apt-get update -y'],
     }
   }
-  exec { 'apt-get update -y':
+  exec { "apt update for source ${target}":
+    command      => 'apt-get update -y',
     path         => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
     provider     => 'shell',
     refresh_only => true,
