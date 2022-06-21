@@ -32,7 +32,7 @@ define profile::cem_gha_runner_venv::apt_source (
     profile::cem_gha_runner_venv::apt_key { $gpg_target:
       url     => $gpg_url,
       require => File[$target_path],
-      before  => Exec['apt-get update -y'],
+      before  => Exec["apt update for source ${target}"],
     }
   }
   exec { "apt update for source ${target}":
