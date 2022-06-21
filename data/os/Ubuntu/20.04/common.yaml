@@ -175,7 +175,6 @@ profile::cem_gha_runner_venv::apt::packages:
   - ant
   - ant-optional
   - aria2
-  - autoconf
   - binutils
   - bison
   - brotli
