@@ -1,0 +1,236 @@
+---
+profile::cem_gha_runner_venv::global::runner_user: runner
+profile::cem_gha_runner_venv::global::agent_toolsdirectory: /opt/hostedtoolcache
+
+profile::cem_gha_runner_venv::python::pip:
+  - numpy
+  - pipx
+profile::cem_gha_runner_venv::python::pipx:
+  - yamllint
+profile::cem_gha_runner_venv::python::pipx_bin_dir: /opt/pipx_bin
+profile::cem_gha_runner_venv::python::pipx_home: /opt/pipx
+profile::cem_gha_runner_venv::python::toolcache::base_url: https://github.com/actions/python-versions/releases/download/
+profile::cem_gha_runner_venv::python::toolcache::archives:
+  '2.7.18':
+    pin: 2.7.18-87224
+    archive: python-2.7.18-linux-20.04-x64.tar.gz
+    creates: x64
+  '3.6.15':
+    pin: 3.6.15-116025
+    archive: python-3.6.15-linux-20.04-x64.tar.gz
+    creates: x64
+  '3.7.13':
+    pin: 3.7.13-2268493565
+    archive: python-3.7.13-linux-20.04-x64.tar.gz
+    creates: x64
+  '3.8.12':
+    pin: 3.8.12-2268496296
+    archive: python-3.8.12-linux-20.04-x64.tar.gz
+    creates: x64
+  '3.9.13':
+    pin: 3.9.13-2339570595
+    archive: python-3.9.13-linux-20.04-x64.tar.gz
+    creates: x64
+  '3.10.5':
+    pin: 3.10.5-2452607758
+    archive: python-3.10.5-linux-20.04-x64.tar.gz
+    creates: x64
+
+profile::cem_gha_runner_venv::ruby::rubygems:
+  - fastlane
+profile::cem_gha_runner_venv::ruby::toolcache::versions:
+  jruby:
+    - '9.3.4.0'
+    - '9.3.3.0'
+  ruby:
+    - '2.7.6'
+    - '3.1.2'
+
+profile::cem_gha_runner_venv::nodej::version: '16'
+profile::cem_gha_runner_venv::nodejs::node_modules:
+  - grunt
+  - gulp
+  - 'n'
+  - parcel
+  - typescript
+  - newman
+  - vercel
+  - webpack
+  - netlify-cli
+  - lerna
+  - yarn
+
+profile::cem_gha_runner_venv::java::default_vendor: 'Temurin-Hotspot'
+profile::cem_gha_runner_venv::java::default_version: '11'
+profile::cem_gha_runner_venv::java::repos:
+  - name: GPG Java adoptium
+    gpg_url: https://packages.adoptium.net/artifactory/api/gpg/key/public
+    gpg_target: adoptium.gpg
+    url: https://packages.adoptium.net/artifactory/deb/
+    target: adoptium.list
+  - name: GPG Java adopt
+    gpg_url: https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
+    gpg_target: adopt.gpg
+    url: https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+    target: adopt.list
+profile::cem_gha_runner_venv::java::packages:
+  - vendor: Temuran-Hotspot
+    versions:
+      - '8'
+      - '11'
+      - '17'
+  - vendor: Adopt
+    versions:
+      - '8'
+      - '11'
+profile::cem_gha_runner_venv::java::maven:
+  version: '3.8.6'
+  url: 'https://www-eu.apache.org/dist/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip'
+profile::cem_gha_runner_venv::java::gradle:
+  version: '7.4.2'
+  url: 'https://services.gradle.org/distributions/gradle-7.4.2-bin.zip'
+   
+
+profile::cem_gha_runner_venv::apt::packages:
+  - apt-transport-https
+  - ca-certificates
+  - software-properties-common
+  - autoconf
+  - automake
+  - build-essential
+  - clang-format
+  - clang-tidy
+  - clang-tools
+  - clang
+  - clangd
+  - dbus
+  - dnsutils
+  - dpkg
+  - fakeroot
+  - fonts-noto-color-emoji
+  - gnupg2
+  - imagemagick
+  - iproute2
+  - iputils-ping
+  - lib32z1
+  - libc++1
+  - libc++abi1
+  - libc++abi-dev
+  - libc++-dev
+  - libclang-dev
+  - libclang1
+  - libcurl4
+  - libdb-dev
+  - libffi-dev
+  - libgbm-dev
+  - libgdbm6
+  - libgdbm-dev
+  - libgconf-2-4
+  - libgmp
+  - libgsl-dev
+  - libgtk-3-0
+  - liblldb-dev
+  - libllvm-ocaml-dev
+  - libmagic-dev
+  - libmagickcore-dev
+  - libmagickwand-dev
+  - libncurses5-dev
+  - libomp-dev
+  - libomp5
+  - libreadline6-dev
+  - libsecret-1-dev
+  - libsqlite3-dev
+  - libssl-dev
+  - libyaml-0
+  - libyaml-dev
+  - libtool
+  - libunwind8
+  - libxkbfile-dev
+  - libxss1
+  - libzdev
+  - lld
+  - lldb
+  - llvm-dev
+  - llvm-runtime
+  - llvm
+  - locales
+  - mercurial
+  - openssh-client
+  - openssl
+  - p7zip-rar
+  - pkg-config
+  - python-is-python3
+  - python3-clang
+  - rpm
+  - texinfo
+  - tk
+  - tzdata
+  - upx
+  - xorriso
+  - xvfb
+  - xz-utils
+  - zlib1g-dev
+  - zsync
+  - acl
+  - ant
+  - ant-optional
+  - aria2
+  - autoconf
+  - binutils
+  - bison
+  - brotli
+  - bzip2
+  - coreutils
+  - curl
+  - docker
+  - file
+  - flex
+  - ftp
+  - git
+  - git-ftp
+  - haveged
+  - jq
+  - m4
+  - mediainfo
+  - netcat
+  - net-tools
+  - p7zip-full
+  - parallel
+  - pass
+  - patchelf
+  - pollinate
+  - rsync
+  - shellcheck
+  - sphinxsearch
+  - sqlite3
+  - ssh
+  - sshpass
+  - subversion
+  - sudo
+  - swig
+  - telnet
+  - time
+  - unzip
+  - wget
+  - zip
+
+profile::cem_gha_runner_venv::docker::images:
+  - alpine:3.12
+  - alpine:3.13
+  - alpine:3.14
+  - buildpack-deps:stretch
+  - buildpack-deps:buster
+  - buildpack-deps:bullseye
+  - debian:9
+  - debian:10
+  - debian:11
+  - moby/buildkit:latest
+  - node:12
+  - node:14
+  - node:16
+  - node:12-alpine
+  - node:14-alpine
+  - node:16-alpine
+  - ubuntu:16.04
+  - ubuntu:18.04
+  - ubuntu:20.04
