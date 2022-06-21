@@ -14,5 +14,5 @@ cem_windows::config:
     c2_2_26:
       users:
         - 'BUILTIN\Guests'
-cem_windows::benchmarks::cis::allow_local_account_rdp: true
+cem_windows::allow_local_account_rdp: true
 
