@@ -12,7 +12,7 @@ class profile::cem_gha_runner_venv::python (
 ) inherits profile::cem_gha_runner_venv::global {
   File {
     ensure => directory,
-    user   => $profile::cem_gha_runner_venv::global::runner_user,
+    owner  => $profile::cem_gha_runner_venv::global::runner_user,
     group  => $profile::cem_gha_runner_venv::global::runner_user,
     mode   => '0777',
   }
