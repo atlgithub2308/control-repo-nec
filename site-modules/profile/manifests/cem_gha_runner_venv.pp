@@ -13,7 +13,7 @@ class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global
     mode   => '0755',
   }
   $profile::cem_gha_runner_venv::global::env_vars.each |$key, $val| {
-    cem_gha_runner_venv::env_var { "env_var ${key}=${val}":
+    profile::cem_gha_runner_venv::env_var { "env_var ${key}=${val}":
       key   => $key,
       value => $val
     }
