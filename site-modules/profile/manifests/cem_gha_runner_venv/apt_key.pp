@@ -11,16 +11,8 @@ define profile::cem_gha_runner_venv::apt_key (
   }
   $target_path = "/usr/share/keyrings/${target}"
 
-  file { '/usr/share/keyrings':
-    ensure => directory,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0755',
-  }
-
   archive::download { $target_path:
     url       => $url,
-    subscribe => File['/usr/share/keyrings'],
   }
   ~> file { $target:
     ensure => file,
