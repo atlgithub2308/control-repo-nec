@@ -13,7 +13,7 @@ define profile::cem_gha_runner_venv::apt_source (
   $target_path = "/etc/apt/sources.list.d/${target}"
   $gpg_target_path = "/usr/share/keyrings/${gpg_target}"
   $_distribution = $distribution =~ Undef ? {
-    true => $facts['os']['lsb']['distcodename'],
+    true => $facts['os']['distro']['codename'],
     default => $distribution,
   }
   if $add_signed_by {
