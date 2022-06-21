@@ -16,7 +16,7 @@ class profile::cem_gha_runner_venv::java (
   include stdlib
 
   $repos.each |$repo| {
-    profile::cem_gha_runner_venv::apt_source { $repos['target']:
+    profile::cem_gha_runner_venv::apt_source { $repo['target']:
       url        => $repo['url'],
       gpg_url    => $repo['gpg_url'],
       gpg_target => $repo['gpg_target'],
