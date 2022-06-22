@@ -16,7 +16,8 @@ class profile::cem_gha_runner_venv::java (
   include stdlib
 
   $repos.each |$repo| {
-    profile::cem_gha_runner_venv::apt_source { $repo['target']:
+    profile::cem_gha_runner_venv::apt_source { $repo['name']:
+      target     => $repo['target'],
       url        => $repo['url'],
       gpg_url    => $repo['gpg_url'],
       gpg_target => $repo['gpg_target'],
@@ -28,7 +29,8 @@ class profile::cem_gha_runner_venv::java (
         package { "temurin-${version}-jdk=\\*":
           ensure          => present,
           provider        => 'apt',
-          install_options => ['-y']
+          install_options => ['-y'],
+          subscribe       => Profile::Cem_gha_runner_venv::Apt_source['GPG Java adoptium', 'GPG Java adopt'],
         }
         if $package['vendor'] == $default_vendor and $version == $default_version {
           profile::cem_gha_runner_venv::env_var { "export JAVA_HOME=/usr/lib/jvm/temurin-${version}-jdk-amd64":
@@ -48,6 +50,7 @@ class profile::cem_gha_runner_venv::java (
           ensure          => present,
           provider        => 'apt',
           install_options => ['-y'],
+          subscribe       => Profile::Cem_gha_runner_venv::Apt_source['GPG Java adoptium', 'GPG Java adopt'],
         }
         if $package['vendor'] == $default_vendor and $version == $default_version {
           profile::cem_gha_runner_venv::env_var { "export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64":
