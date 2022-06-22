@@ -14,7 +14,7 @@ define profile::cem_gha_runner_venv::env_var (
   if $export {
     exec { "export ${key}=${value}":
       path     => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-      onlyif   => "/bin/bash -c '[[ -z ${var} ]] || [[ \"${var}\" != ${value} ]]'",
+      onlyif   => "/bin/bash -c '[[ -z ${var} ]] || [[ \"$(echo ${var})\" != ${value} ]]'",
       provider => 'shell',
     }
   }
