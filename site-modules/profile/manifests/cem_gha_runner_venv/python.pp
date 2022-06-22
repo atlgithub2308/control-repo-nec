@@ -46,8 +46,4 @@ class profile::cem_gha_runner_venv::python (
     refreshonly => true,
     provider    => 'shell',
   }
-  -> profile::cem_gha_runner_venv::env_var { 'export PATH="$HOME/.local/bin:$PATH':
-    key   => 'PATH',
-    value => '$HOME/.local/bin:$PATH',
-  }
 }
