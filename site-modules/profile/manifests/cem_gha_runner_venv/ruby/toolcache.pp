@@ -33,7 +33,7 @@ class profile::cem_gha_runner_venv::ruby::toolcache (
         extract_flags => 'xf',
         user          => $profile::cem_gha_runner_venv::global::runner_user,
         group         => $profile::cem_gha_runner_venv::global::runner_user,
-        creates       => "${toolcache}/${ver}/bin/ruby",
+        creates       => "${toolcache}/${ver}/x64/bin/ruby",
         cleanup       => true,
       }
     }
