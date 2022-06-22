@@ -25,7 +25,7 @@ class profile::cem_gha_runner_venv::apt(
   }
   file { '/etc/apt/apt.conf.d/10-apt-autoremove':
     ensure => file,
-    source => 'puppet:///modules/profile/cem_gha_runner_venv/apt/10-apt-autoremove',
+    source => 'puppet:///modules/profile/cem_gha_runner_venv/apt/10-apt_autoremove',
   }
   -> file { '/etc/apt/apt.conf.d/10-dpkg_options':
     ensure => file,
