@@ -9,7 +9,7 @@ profile::cem_gha_runner_venv::python::pipx:
   - yamllint
 profile::cem_gha_runner_venv::python::pipx_bin_dir: /opt/pipx_bin
 profile::cem_gha_runner_venv::python::pipx_home: /opt/pipx
-profile::cem_gha_runner_venv::python::toolcache::base_url: https://github.com/actions/python-versions/releases/download/
+profile::cem_gha_runner_venv::python::toolcache::base_url: https://github.com/actions/python-versions/releases/download
 profile::cem_gha_runner_venv::python::toolcache::archives:
   '2.7.18':
     pin: 2.7.18-87224
@@ -126,7 +126,7 @@ profile::cem_gha_runner_venv::apt::packages:
   - libgdbm6
   - libgdbm-dev
   - libgconf-2-4
-  - libgmp
+  #- libgmp
   - libgsl-dev
   - libgtk-3-0
   - liblldb-dev
@@ -141,13 +141,13 @@ profile::cem_gha_runner_venv::apt::packages:
   - libsecret-1-dev
   - libsqlite3-dev
   - libssl-dev
-  - libyaml-0
+  #- libyaml-0
   - libyaml-dev
   - libtool
   - libunwind8
   - libxkbfile-dev
   - libxss1
-  - libzdev
+  #- libzdev
   - lld
   - lldb
   - llvm-dev

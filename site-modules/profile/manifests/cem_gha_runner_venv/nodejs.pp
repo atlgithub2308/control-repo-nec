@@ -10,14 +10,13 @@ class profile::cem_gha_runner_venv::nodejs (
 ) {
   include archive
 
-  archive { '/opt/node_installer':
-    ensure  => present,
-    source  => 'https://raw.githubusercontent.com/tj/n/master/bin/n',
-    cleanup => false,
+  archive::download { '/opt/node_installer':
+    url      => 'https://raw.githubusercontent.com/tj/n/master/bin/n',
+    checksum => false,
   }
   ~> exec { "bash /opt/node_installer ${version}":
     path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-    unless      => "[[ \"$(npm --version)\" =~ ^${version}.* ]]",
+    unless      => "/bin/bash -c '[[ \"$(npm --version)\" =~ ^${version}.* ]] && exit 0 || exit 1'",
     refreshonly => true,
     provider    => 'shell',
   }

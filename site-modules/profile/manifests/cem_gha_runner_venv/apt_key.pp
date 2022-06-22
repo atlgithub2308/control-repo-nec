@@ -12,7 +12,8 @@ define profile::cem_gha_runner_venv::apt_key (
   $target_path = "/usr/share/keyrings/${target}"
 
   archive::download { $target_path:
-    url       => $url,
+    url      => $url,
+    checksum => false,
   }
   ~> file { $target_path:
     ensure => file,
