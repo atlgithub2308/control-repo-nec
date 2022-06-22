@@ -1,4 +1,6 @@
 # Primary profile for bootstrapping a Github Actions self-hosted runner for CEM
+# These profiles are designed to work with Ubuntu 20.04 and closely mirror
+# the official GitHub actions runner virtual environment found here: https://github.com/actions/virtual-environments/tree/main/images/linux
 class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global {
   include stdlib
 
