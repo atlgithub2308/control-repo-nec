@@ -25,23 +25,23 @@ class profile::cem_gha_runner_venv::apt(
   }
   file { '/etc/apt/apt.conf.d/10-apt-autoremove':
     ensure => file,
-    source => 'puppet:///modules/profile/10-apt-autoremove',
+    source => 'puppet:///modules/profile/cem_gha_runner_venv/apt/10-apt-autoremove',
   }
   -> file { '/etc/apt/apt.conf.d/10-dpkg_options':
     ensure => file,
-    source => 'puppet:///modules/profile/10-dpkg_options',
+    source => 'puppet:///modules/profile/cem_gha_runner_venv/apt/10-dpkg_options',
   }
   -> file { '/etc/apt/apt.conf.d/80-retries':
     ensure => file,
-    source => 'puppet:///modules/profile/80-retries',
+    source => 'puppet:///modules/profile/cem_gha_runner_venv/apt/80-retries',
   }
   -> file { '/etc/apt/apt.conf.d/90-assume_yes':
     ensure => file,
-    source => 'puppet:///modules/profile/90-assume_yes',
+    source => 'puppet:///modules/profile/cem_gha_runner_venv/apt/90-assume_yes',
   }
   -> file { '/etc/apt/apt.conf.d/99-bad_proxy':
     ensure => file,
-    source => 'puppet:///modules/profile/99-bad_proxy',
+    source => 'puppet:///modules/profile/cem_gha_runner_venv/apt/99-bad_proxy',
   }
   package { 'unattended-upgrades':
     ensure => purged,
