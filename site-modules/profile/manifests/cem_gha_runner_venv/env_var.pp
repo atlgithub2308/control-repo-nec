@@ -11,13 +11,13 @@ define profile::cem_gha_runner_venv::env_var (
   Boolean $add_to_etc_environment = true,
 ) {
   $var = "\$${key}"
-  if $export {
-    exec { "export ${key}=${value}":
-      path     => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-      onlyif   => "/bin/bash -c '[[ -z ${var} ]] || [[ \"$(echo ${var})\" != ${value} ]]'",
-      provider => 'shell',
-    }
-  }
+  # if $export {
+  #   exec { "export ${key}=${value}":
+  #     path     => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
+  #     onlyif   => "/bin/bash -c '[[ -z ${var} ]] || [[ \"$(echo ${var})\" != ${value} ]]'",
+  #     provider => 'shell',
+  #   }
+  # }
   if $add_to_etc_environment {
     file_line { "/etc/environment ${key}=${value}":
       ensure  => present,

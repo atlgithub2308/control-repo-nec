@@ -64,7 +64,7 @@ profile::cem_gha_runner_venv::nodejs::modules_in_bin:
     symlink: true
     symlink_path: /usr/local/bin/now
 
-profile::cem_gha_runner_venv::java::default_vendor: 'Temurin-Hotspot'
+profile::cem_gha_runner_venv::java::default_vendor: 'Temuran-Hotspot'
 profile::cem_gha_runner_venv::java::default_version: '11'
 profile::cem_gha_runner_venv::java::repos:
   - name: GPG Java adoptium
