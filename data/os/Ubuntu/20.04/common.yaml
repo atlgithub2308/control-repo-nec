@@ -54,24 +54,28 @@ profile::cem_gha_runner_venv::nodejs::node_modules:
   - parcel
   - typescript
   - newman
-  - vercel
   - webpack
   - netlify-cli
   - lerna
   - yarn
+profile::cem_gha_runner_venv::nodejs::modules_in_bin:
+  - name: vercel
+    path: /usr/local/bin/vercel
+    symlink: true
+    symlink_path: /usr/local/bin/now
 
 profile::cem_gha_runner_venv::java::default_vendor: 'Temurin-Hotspot'
 profile::cem_gha_runner_venv::java::default_version: '11'
 profile::cem_gha_runner_venv::java::repos:
   - name: GPG Java adoptium
     gpg_url: https://packages.adoptium.net/artifactory/api/gpg/key/public
-    gpg_target: adoptium.gpg
-    url: https://packages.adoptium.net/artifactory/deb/
+    gpg_target: adoptium.asc
+    url: https://packages.adoptium.net/artifactory/deb
     target: adoptium.list
   - name: GPG Java adopt
     gpg_url: https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
-    gpg_target: adopt.gpg
-    url: https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+    gpg_target: adopt.asc
+    url: https://adoptopenjdk.jfrog.io/adoptopenjdk/deb
     target: adopt.list
 profile::cem_gha_runner_venv::java::packages:
   - vendor: Temuran-Hotspot
@@ -126,7 +130,6 @@ profile::cem_gha_runner_venv::apt::packages:
   - libgdbm6
   - libgdbm-dev
   - libgconf-2-4
-  #- libgmp
   - libgsl-dev
   - libgtk-3-0
   - liblldb-dev
@@ -141,13 +144,11 @@ profile::cem_gha_runner_venv::apt::packages:
   - libsecret-1-dev
   - libsqlite3-dev
   - libssl-dev
-  #- libyaml-0
   - libyaml-dev
   - libtool
   - libunwind8
   - libxkbfile-dev
   - libxss1
-  #- libzdev
   - lld
   - lldb
   - llvm-dev

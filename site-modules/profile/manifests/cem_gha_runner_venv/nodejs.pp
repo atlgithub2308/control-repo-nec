@@ -7,6 +7,7 @@
 class profile::cem_gha_runner_venv::nodejs (
   String $version,
   Array[String] $node_modules,
+  Optional[Array[Hash]] $modules_in_bin = undef,
 ) {
   include archive
 
@@ -23,17 +24,28 @@ class profile::cem_gha_runner_venv::nodejs (
   $node_modules.each |$nm| {
     exec { "npm -g install ${nm}":
       path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-      unless      => "npm -g ls | grep -q ${nm}",
+      unless      => "npm --location=global ls | grep -q ${nm}",
       provider    => 'shell',
       refreshonly => true,
       subscribe   => Exec["bash /opt/node_installer ${version}"],
-      before      => File['vercel symlink'],
     }
   }
-  file { 'vercel symlink':
-    ensure => 'link',
-    path   => '/usr/local/bin/vercel',
-    target => '/usr/local/bin/now',
+  $modules_in_bin.each |$nm| {
+    exec { "npm -g install ${nm['name']}":
+      path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
+      unless      => "file ${nm['path']}",
+      provider    => 'shell',
+      refreshonly => true,
+      subscribe   => Exec["bash /opt/node_installer ${version}"],
+    }
+    if $nm['symlink'] {
+      file { 'vercel symlink':
+        ensure    => 'link',
+        path      => $nm['path'],
+        target    => $nm['symlink_path'],
+        subscribe => Exec["npm -g install ${nm['name']}"],
+      }
+    }
   }
   file { '/usr/local/lib/node_modules':
     ensure    => directory,

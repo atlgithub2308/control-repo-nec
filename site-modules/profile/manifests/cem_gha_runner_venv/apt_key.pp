@@ -1,7 +1,7 @@
 # Type that manages apt-key gpg key commands
 define profile::cem_gha_runner_venv::apt_key (
   Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl] $url,
-  Pattern[/[a-zA-Z0-9][a-zA-Z0-9._-]*\.gpg/] $target = $title,
+  Pattern[/[a-zA-Z0-9][a-zA-Z0-9._-]*\.(gpg|asc)/] $target = $title,
 ) {
   include archive
   include stdlib
@@ -12,18 +12,8 @@ define profile::cem_gha_runner_venv::apt_key (
   $target_path = "/usr/share/keyrings/${target}"
 
   archive::download { $target_path:
+    ensure   => present,
     url      => $url,
     checksum => false,
-  }
-  ~> file { $target_path:
-    ensure => file,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0644',
-  }
-  ~> exec { "apt-key --keyring ${target_path} add ${target_path}":
-    path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-    provider    => 'shell',
-    refreshonly => true,
   }
 }

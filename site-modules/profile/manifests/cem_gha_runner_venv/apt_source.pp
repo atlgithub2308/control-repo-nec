@@ -8,8 +8,10 @@ define profile::cem_gha_runner_venv::apt_source (
   Optional[String] $distribution = undef,
   Optional[Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl]] $url = undef,
   Optional[Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl]] $gpg_url = undef,
-  Optional[String] $gpg_target = undef,
+  Pattern[/[a-zA-Z0-9][a-zA-Z0-9._-]*\.(gpg|asc)/] $gpg_target = undef,
 ) {
+  include archive
+
   $target_path = "/etc/apt/sources.list.d/${target}"
   $gpg_target_path = "/usr/share/keyrings/${gpg_target}"
   $_distribution = $distribution =~ Undef ? {
@@ -27,16 +29,18 @@ define profile::cem_gha_runner_venv::apt_source (
     group   => 'root',
     mode    => '0644',
     content => $content,
+    notify  => Exec["apt update for source ${target}"],
   }
   if $gpg_target !~ Undef {
-    profile::cem_gha_runner_venv::apt_key { $gpg_target:
-      url     => $gpg_url,
-      require => File[$target_path],
-      before  => Exec["apt update for source ${target}"],
+    archive::download { $gpg_target_path:
+      ensure   => present,
+      url      => $gpg_url,
+      checksum => false,
+      notify   => Exec["apt update for source ${target}"],
     }
   }
   exec { "apt update for source ${target}":
-    command     => 'apt-get update -y',
+    command     => 'apt-get update',
     path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
     provider    => 'shell',
     refreshonly => true,

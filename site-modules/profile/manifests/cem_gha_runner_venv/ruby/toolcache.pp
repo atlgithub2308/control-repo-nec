@@ -21,7 +21,7 @@ class profile::cem_gha_runner_venv::ruby::toolcache (
   }
   $versions.each |$ruby_type, $vers| {
     $vers.each |$ver| {
-      file { "${toolcache}${ver}":
+      file { "${toolcache}/${ver}":
         subscribe => Profile::Cem_gha_runner_venv::Env_var['ruby path'],
       }
       ~> archive { "${ruby_type} ${ver}":
@@ -29,7 +29,7 @@ class profile::cem_gha_runner_venv::ruby::toolcache (
         path          => "/tmp/${ruby_type}-${ver}${archive_suffix}",
         source        => "${download_url}/${ruby_type}-${ver}${archive_suffix}",
         extract       => true,
-        extract_path  => "${toolcache}${ver}",
+        extract_path  => "${toolcache}/${ver}",
         extract_flags => 'xf',
         user          => $profile::cem_gha_runner_venv::global::runner_user,
         group         => $profile::cem_gha_runner_venv::global::runner_user,

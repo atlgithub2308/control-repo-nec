@@ -7,14 +7,17 @@ class profile::cem_gha_runner_venv::global (
   $_os_fact_str = "${facts['os']['name']}${facts['os']['release']['major']}"
   case $_os_fact_str {
     /^Ubuntu20.*$/: {
-      $runner_home = "/home/${runner_user}"
+      $home = "/home/${runner_user}"
       $image_os = 'ubuntu20'
-      $env_vars = {
-        'HOME'                 => $runner_home,
+      $path = "${home}/.local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/snap/bin:/opt/puppetlabs/bin"
+      $xdg_config_home = "${home}/.config"
+      $base_env_vars = {
+        'PATH'                 => $path,
+        'HOME'                 => $home,
         'ImageOS'              => $image_os,
         'ACCEPT_EULA'          => 'Y',
         'AGENT_TOOLSDIRECTORY' => $agent_toolsdirectory,
-        'XDG_CONFIG_HOME'      => '$HOME/.config',
+        'XDG_CONFIG_HOME'      => $xdg_config_home,
         'DEBIAN_FRONTEND'      => 'noninteractive',
       }
     }

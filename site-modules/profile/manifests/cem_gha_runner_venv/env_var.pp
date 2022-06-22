@@ -13,7 +13,7 @@ define profile::cem_gha_runner_venv::env_var (
   $var = "\$${key}"
   if $export {
     exec { "export ${key}=${value}":
-      path     => '/bin:/sbin:/usr/bin:/usr/sbin',
+      path     => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
       unless   => "[ -z ${var} ] || [ \"${var}\" = ${value} ]",
       provider => 'shell',
     }
