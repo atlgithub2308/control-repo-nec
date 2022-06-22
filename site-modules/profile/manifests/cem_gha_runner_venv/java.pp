@@ -38,7 +38,7 @@ class profile::cem_gha_runner_venv::java (
             value     => "/usr/lib/jvm/temurin-${version}-jdk-amd64",
             subscribe => Package["temurin-${version}-jdk"],
           }
-        } else {
+        } elsif $package['vendor'] == $default_vendor {
           profile::cem_gha_runner_venv::env_var { "export JAVA_HOME_${version}_X64=/usr/lib/jvm/temurin-${version}-jdk-amd64":
             key       => "JAVA_HOME_${version}_X64",
             value     => "/usr/lib/jvm/temurin-${version}-jdk-amd64",
@@ -58,7 +58,7 @@ class profile::cem_gha_runner_venv::java (
             value     => "/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64",
             subscribe => Package["adoptopenjdk-${version}-hotspot"],
           }
-        } else {
+        } elsif $package['vendor'] == $default_vendor {
           profile::cem_gha_runner_venv::env_var { "export JAVA_HOME_${version}_X64=/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64":
             key       => "JAVA_HOME_${version}_X64",
             value     => "/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64",
