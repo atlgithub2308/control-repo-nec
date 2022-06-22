@@ -21,6 +21,15 @@ class profile::cem_gha_runner_venv::ruby::toolcache (
   }
   $versions.each |$ruby_type, $vers| {
     $vers.each |$ver| {
+      if $ruby_type == 'ruby' {
+        $extract_path = "${toolcache}/${ver}"
+        $creates = "${extract_path}/x64/bin/ruby"
+      } elsif $ruby_type == 'jruby' {
+        $extract_path = $toolcache
+        $creates = "${toolcache}/jruby-${ver}/bin/jruby"
+      } else {
+        fail("${ruby_type} is not a supported Ruby type")
+      }
       file { "${toolcache}/${ver}":
         subscribe => Profile::Cem_gha_runner_venv::Env_var['ruby path'],
       }
@@ -29,11 +38,11 @@ class profile::cem_gha_runner_venv::ruby::toolcache (
         path          => "/tmp/${ruby_type}-${ver}${archive_suffix}",
         source        => "${download_url}/${ruby_type}-${ver}${archive_suffix}",
         extract       => true,
-        extract_path  => "${toolcache}/${ver}",
+        extract_path  => $extract_path,
         extract_flags => 'xf',
         user          => $profile::cem_gha_runner_venv::global::runner_user,
         group         => $profile::cem_gha_runner_venv::global::runner_user,
-        creates       => "${toolcache}/${ver}/x64/bin/ruby",
+        creates       => $creates,
         cleanup       => true,
       }
     }
