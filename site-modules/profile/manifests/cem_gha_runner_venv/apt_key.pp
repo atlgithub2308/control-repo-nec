@@ -1,7 +1,7 @@
 # Type that manages apt-key gpg key commands
 define profile::cem_gha_runner_venv::apt_key (
   Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl] $url,
-  String $target = $title,
+  Pattern[/[a-zA-Z0-9][a-zA-Z0-9._-]*\.gpg/] $target = $title,
 ) {
   include archive
   include stdlib
@@ -14,7 +14,7 @@ define profile::cem_gha_runner_venv::apt_key (
   archive::download { $target_path:
     url       => $url,
   }
-  ~> file { $target:
+  ~> file { $target_path:
     ensure => file,
     owner  => 'root',
     group  => 'root',
