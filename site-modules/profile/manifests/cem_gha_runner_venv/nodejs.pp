@@ -11,9 +11,13 @@ class profile::cem_gha_runner_venv::nodejs (
 ) {
   include archive
 
-  archive::download { '/opt/node_installer':
-    url      => 'https://raw.githubusercontent.com/tj/n/master/bin/n',
-    checksum => false,
+  archive { '/opt/node_installer':
+    ensure          => present,
+    source          => 'https://raw.githubusercontent.com/tj/n/master/bin/n',
+    extract         => false,
+    checksum_verify => false,
+    cleanup         => false,
+    creates         => '/opt/node_installer',
   }
   ~> file { '/opt/node_installer':
     ensure => file,

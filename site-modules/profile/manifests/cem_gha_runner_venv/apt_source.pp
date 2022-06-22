@@ -32,11 +32,14 @@ define profile::cem_gha_runner_venv::apt_source (
     notify  => Exec["apt update for source ${target}"],
   }
   if $gpg_target !~ Undef {
-    archive::download { $gpg_target_path:
-      ensure   => present,
-      url      => $gpg_url,
-      checksum => false,
-      notify   => Exec["apt update for source ${target}"],
+    archive { $gpg_target_path:
+      ensure          => present,
+      source          => $gpg_url,
+      extract         => false,
+      checksum_verify => false,
+      cleanup         => false,
+      creates         => $gpg_target_path,
+      notify          => Exec["apt update for source ${target}"],
     }
   }
   exec { "apt update for source ${target}":

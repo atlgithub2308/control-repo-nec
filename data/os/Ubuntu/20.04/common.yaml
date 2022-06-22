@@ -140,7 +140,6 @@ profile::cem_gha_runner_venv::apt::packages:
   - libncurses5-dev
   - libomp-dev
   - libomp5
-  - libreadline6-dev
   - libsecret-1-dev
   - libsqlite3-dev
   - libssl-dev
@@ -166,7 +165,6 @@ profile::cem_gha_runner_venv::apt::packages:
   - texinfo
   - tk
   - tzdata
-  - upx
   - xorriso
   - xvfb
   - xz-utils
