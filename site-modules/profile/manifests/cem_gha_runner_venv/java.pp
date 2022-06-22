@@ -26,7 +26,7 @@ class profile::cem_gha_runner_venv::java (
   $packages.each |$package| {
     $package['versions'].each |$version| {
       if $package['vendor'] == 'Temuran-Hotspot' {
-        package { "temurin-${version}-jdk=\\*":
+        package { "temurin-${version}-jdk":
           ensure          => present,
           provider        => 'apt',
           install_options => ['-y'],
@@ -46,7 +46,7 @@ class profile::cem_gha_runner_venv::java (
           }
         }
       } elsif $package['vendor'] == 'Adopt' {
-        package { "adoptopenjdk-${version}-hotspot=\\*":
+        package { "adoptopenjdk-${version}-hotspot":
           ensure          => present,
           provider        => 'apt',
           install_options => ['-y'],

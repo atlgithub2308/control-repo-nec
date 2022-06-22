@@ -17,7 +17,7 @@ class profile::cem_gha_runner_venv::nodejs (
   }
   ~> exec { "bash /opt/node_installer ${version}":
     path        => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin',
-    unless      => "/bin/bash -c '[[ \"$(node --version)\" =~ ^v${version}.* ]] && exit 0 || exit 1'",
+    unless      => "/bin/bash -c '[[ \"$(node --version)\" =~ ^v${version}.* ]]'",
     refreshonly => true,
     provider    => 'shell',
   }
