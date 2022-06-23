@@ -16,9 +16,10 @@ class profile::cem_gha_runner_venv::global (
       $path = "${runner_home}/.local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/snap/bin:/opt/puppetlabs/bin"
       $xdg_config_home = "${runner_home}/.config"
       $base_env_vars = {
+        'LANG'                 => 'C.UTF-8',
+        'ImageOS'              => $image_os,
         'PATH'                 => $path,
         'HOME'                 => $runner_home,
-        'ImageOS'              => $image_os,
         'ACCEPT_EULA'          => 'Y',
         'AGENT_TOOLSDIRECTORY' => $agent_toolsdirectory,
         'XDG_CONFIG_HOME'      => $xdg_config_home,

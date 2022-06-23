@@ -26,7 +26,7 @@ class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global
     ensure => file,
     owner  => $profile::cem_gha_runner_venv::global::runner_user,
     group  => $profile::cem_gha_runner_venv::global::runner_user,
-    mode   => '0777',
+    mode   => '0644',
   }
   $profile::cem_gha_runner_venv::global::base_env_vars.each |$key, $val| {
     profile::cem_gha_runner_venv::env_var { "env_var ${key}=${val}":
