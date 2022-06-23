@@ -16,8 +16,12 @@ class profile::cem_gha_runner_venv::ruby::toolcache (
 
   file { $toolcache: }
   -> profile::cem_gha_runner_venv::env_var { 'ruby path':
-    key   => 'RUBY_PATH',
-    value => $toolcache,
+    key                      => 'RUBY_PATH',
+    value                    => $toolcache,
+    add_to_environment_files => true,
+    environment_file_paths   => [
+      $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+    ],
   }
   $versions.each |$ruby_type, $vers| {
     $vers.each |$ver| {

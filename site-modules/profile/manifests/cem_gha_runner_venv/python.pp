@@ -19,12 +19,20 @@ class profile::cem_gha_runner_venv::python (
   file { $pipx_home: }
   -> file { $pipx_bin_dir: }
   -> profile::cem_gha_runner_venv::env_var { "export PIPX_HOME=${pipx_home}":
-    key   => 'PIPX_HOME',
-    value => $pipx_home,
+    key                      => 'PIPX_HOME',
+    value                    => $pipx_home,
+    add_to_environment_files => true,
+    environment_file_paths   => [
+      $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+    ],
   }
   -> profile::cem_gha_runner_venv::env_var { "export PIPX_BIN_DIR=${pipx_bin_dir}":
-    key   => 'PIPX_BIN_DIR',
-    value => $pipx_bin_dir,
+    key                      => 'PIPX_BIN_DIR',
+    value                    => $pipx_bin_dir,
+    add_to_environment_files => true,
+    environment_file_paths   => [
+      $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+    ],
   }
 
   Package {

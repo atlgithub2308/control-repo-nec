@@ -14,19 +14,19 @@ class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global
     ensure => directory,
     owner  => $profile::cem_gha_runner_venv::global::runner_user,
     group  => $profile::cem_gha_runner_venv::global::runner_user,
-    mode   => '0755',
+    mode   => '0777',
   }
   -> file { $profile::cem_gha_runner_venv::global::runner_svc_dir:
     ensure => directory,
     owner  => $profile::cem_gha_runner_venv::global::runner_user,
     group  => $profile::cem_gha_runner_venv::global::runner_user,
-    mode   => '0755',
+    mode   => '0777',
   }
   -> file { $profile::cem_gha_runner_venv::global::runner_svc_env_file:
     ensure => file,
     owner  => $profile::cem_gha_runner_venv::global::runner_user,
     group  => $profile::cem_gha_runner_venv::global::runner_user,
-    mode   => '0755',
+    mode   => '0777',
   }
   $profile::cem_gha_runner_venv::global::base_env_vars.each |$key, $val| {
     profile::cem_gha_runner_venv::env_var { "env_var ${key}=${val}":

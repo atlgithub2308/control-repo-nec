@@ -34,15 +34,23 @@ class profile::cem_gha_runner_venv::java (
         }
         if $package['vendor'] == $default_vendor and $version == $default_version {
           profile::cem_gha_runner_venv::env_var { "export JAVA_HOME=/usr/lib/jvm/temurin-${version}-jdk-amd64":
-            key       => 'JAVA_HOME',
-            value     => "/usr/lib/jvm/temurin-${version}-jdk-amd64",
-            subscribe => Package["temurin-${version}-jdk"],
+            key                      => 'JAVA_HOME',
+            value                    => "/usr/lib/jvm/temurin-${version}-jdk-amd64",
+            add_to_environment_files => true,
+            environment_file_paths   => [
+              $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+            ],
+            subscribe                => Package["temurin-${version}-jdk"],
           }
         } elsif $package['vendor'] == $default_vendor {
           profile::cem_gha_runner_venv::env_var { "export JAVA_HOME_${version}_X64=/usr/lib/jvm/temurin-${version}-jdk-amd64":
-            key       => "JAVA_HOME_${version}_X64",
-            value     => "/usr/lib/jvm/temurin-${version}-jdk-amd64",
-            subscribe => Package["temurin-${version}-jdk"],
+            key                      => "JAVA_HOME_${version}_X64",
+            value                    => "/usr/lib/jvm/temurin-${version}-jdk-amd64",
+            add_to_environment_files => true,
+            environment_file_paths   => [
+              $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+            ],
+            subscribe                => Package["temurin-${version}-jdk"],
           }
         }
       } elsif $package['vendor'] == 'Adopt' {
@@ -54,15 +62,23 @@ class profile::cem_gha_runner_venv::java (
         }
         if $package['vendor'] == $default_vendor and $version == $default_version {
           profile::cem_gha_runner_venv::env_var { "export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64":
-            key       => 'JAVA_HOME',
-            value     => "/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64",
-            subscribe => Package["adoptopenjdk-${version}-hotspot"],
+            key                      => 'JAVA_HOME',
+            value                    => "/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64",
+            add_to_environment_files => true,
+            environment_file_paths   => [
+              $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+            ],
+            subscribe                => Package["adoptopenjdk-${version}-hotspot"],
           }
         } elsif $package['vendor'] == $default_vendor {
           profile::cem_gha_runner_venv::env_var { "export JAVA_HOME_${version}_X64=/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64":
-            key       => "JAVA_HOME_${version}_X64",
-            value     => "/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64",
-            subscribe => Package["adoptopenjdk-${version}-hotspot"],
+            key                      => "JAVA_HOME_${version}_X64",
+            value                    => "/usr/lib/jvm/adoptopenjdk-${version}-hotspot-amd64",
+            add_to_environment_files => true,
+            environment_file_paths   => [
+              $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+            ],
+            subscribe                => Package["adoptopenjdk-${version}-hotspot"],
           }
         }
       } else {
