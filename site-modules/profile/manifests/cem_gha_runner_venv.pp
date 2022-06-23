@@ -5,8 +5,10 @@ class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global
   include stdlib
 
   user { $profile::cem_gha_runner_venv::global::runner_user:
-    ensure => present,
-    home   => $profile::cem_gha_runner_venv::global::runner_home,
+    ensure     => present,
+    home       => $profile::cem_gha_runner_venv::global::runner_home,
+    managehome => true,
+    shell      => '/bin/bash',
   }
   -> file { $profile::cem_gha_runner_venv::global::agent_toolsdirectory:
     ensure => directory,
