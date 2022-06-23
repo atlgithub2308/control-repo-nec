@@ -10,7 +10,7 @@ class profile::cem_gha_runner_venv::global (
     /^Ubuntu20.*$/: {
       $runner_home = "/home/${runner_user}"
       $runner_svc_dir = "${runner_home}/actions-runner"
-      $runner_svc_env_file = "${runner_svc_dir}/svc_env"
+      $runner_svc_env_file = "${runner_svc_dir}/.env"
       $runner_svc_unit_file = "actions.runner.${runner_name}.service"
       $image_os = 'ubuntu20'
       $path = "${runner_home}/.local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/snap/bin:/opt/puppetlabs/bin"
