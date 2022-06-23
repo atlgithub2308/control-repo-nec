@@ -117,6 +117,8 @@ profile::cem_gha_runner_venv::apt::packages:
   - iproute2
   - iputils-ping
   - lib32z1
+  - libaugeas0
+  - libaugeas-dev
   - libc++1
   - libc++abi1
   - libc++abi-dev
@@ -154,7 +156,8 @@ profile::cem_gha_runner_venv::apt::packages:
   - llvm-runtime
   - llvm
   - locales
-  - augeas-devel
+  - augeas-tools
+  - augeas-lenses
   - mercurial
   - openssh-client
   - openssl
