@@ -18,9 +18,24 @@ class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global
   }
   $profile::cem_gha_runner_venv::global::base_env_vars.each |$key, $val| {
     profile::cem_gha_runner_venv::env_var { "env_var ${key}=${val}":
-      key   => $key,
-      value => $val
+      key                      => $key,
+      value                    => $val,
+      add_to_environment_files => true,
+      environment_file_paths   => [
+        $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+      ],
+      before                   => File[$profile::cem_gha_runner_venv::global::runner_svc_unit_file],
     }
+  }
+  systemd::unit_file { $profile::cem_gha_runner_venv::global::runner_svc_unit_file:
+    ensure  => present,
+    enable  => true,
+    active  => true,
+    content => epp('profile/cem_gha_runner_venv/actions.runner.service.epp', {
+      'runner_user'         => $profile::cem_gha_runner_venv::global::runner_user,
+      'runner_svc_dir'      => $profile::cem_gha_runner_venv::global::runner_svc_dir,
+      'runner_svc_env_file' => $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+    })
   }
   include profile::cem_gha_runner_venv::apt
   include profile::cem_gha_runner_venv::gcloud

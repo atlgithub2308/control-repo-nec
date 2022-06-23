@@ -1,0 +1,2 @@
+---
+profile::cem_gha_runner_venv::global::runner_name: 'puppetlabs-cem_linux.gha-runner-1'

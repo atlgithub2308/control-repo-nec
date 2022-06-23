@@ -9,6 +9,8 @@ define profile::cem_gha_runner_venv::env_var (
   String $value,
   Boolean $export = true,
   Boolean $add_to_etc_environment = true,
+  Boolean $add_to_environment_files = false,
+  Optional[Array[Stdlib::AbsolutePath]] $environment_file_paths = undef,
 ) {
   $var = "\$${key}"
   # if $export {
@@ -25,6 +27,21 @@ define profile::cem_gha_runner_venv::env_var (
       line    => "${key}=${value}",
       match   => "^${key}\=",
       replace => true,
+    }
+  }
+  if $add_to_environment_files {
+    if $environment_file_paths =~ Undef {
+      fail('When $add_to_environment_files is true, $environment_file_paths must be specified')
+    } else {
+      $environment_file_paths.each |$efp| {
+        file_line { "${efp} ${key}=${value}":
+          ensure  => present,
+          path    => $efp,
+          line    => "${key}=${value}",
+          match   => "^${key}\=",
+          replace => true,
+        }
+      }
     }
   }
 }
