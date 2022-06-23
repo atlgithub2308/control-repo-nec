@@ -154,6 +154,7 @@ profile::cem_gha_runner_venv::apt::packages:
   - llvm-runtime
   - llvm
   - locales
+  - augeas-devel
   - mercurial
   - openssh-client
   - openssl
