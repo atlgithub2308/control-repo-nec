@@ -1,13 +1,11 @@
 <%- | String $runner_user,
       String $runner_svc_dir,
-      String $runner_svc_env_file,
 | -%>
 [Unit]
 Description=GitHub Actions Runner (puppetlabs-puppetlabs-cem_linux.gha-runner-1)
 After=network.target
 
 [Service]
-EnvironmentFile=<%= $runner_svc_env_file %>
 ExecStart=<%= $runner_svc_dir %>/runsvc.sh
 User=<%= $runner_user %>
 WorkingDirectory=<%= $runner_svc_dir %>

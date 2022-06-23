@@ -44,9 +44,8 @@ class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global
     enable  => true,
     active  => true,
     content => epp('profile/cem_gha_runner_venv/actions.runner.service.epp', {
-      'runner_user'         => $profile::cem_gha_runner_venv::global::runner_user,
-      'runner_svc_dir'      => $profile::cem_gha_runner_venv::global::runner_svc_dir,
-      'runner_svc_env_file' => $profile::cem_gha_runner_venv::global::runner_svc_env_file,
+      'runner_user'    => $profile::cem_gha_runner_venv::global::runner_user,
+      'runner_svc_dir' => $profile::cem_gha_runner_venv::global::runner_svc_dir,
     })
   }
   include profile::cem_gha_runner_venv::apt
