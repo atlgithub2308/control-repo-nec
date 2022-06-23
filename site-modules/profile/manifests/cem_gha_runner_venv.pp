@@ -24,7 +24,7 @@ class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global
       environment_file_paths   => [
         $profile::cem_gha_runner_venv::global::runner_svc_env_file,
       ],
-      before                   => Sytemd::Unit_file[$profile::cem_gha_runner_venv::global::runner_svc_unit_file],
+      before                   => Systemd::Unit_file[$profile::cem_gha_runner_venv::global::runner_svc_unit_file],
     }
   }
   systemd::unit_file { $profile::cem_gha_runner_venv::global::runner_svc_unit_file:
