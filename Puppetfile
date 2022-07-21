@@ -4,7 +4,7 @@ forge 'https://forge.puppet.com'
 # Versions should be updated to be the latest at the time you start
 mod 'cem_linux',
   :git => 'git@github.com:puppetlabs/puppetlabs-cem_linux.git',
-  :ref => 'pull/332/head'
+  :ref => 'main'
 mod 'cem_windows',
   :git => 'git@github.com:puppetlabs/puppetlabs-cem_windows.git',
   :ref => 'cem456'
