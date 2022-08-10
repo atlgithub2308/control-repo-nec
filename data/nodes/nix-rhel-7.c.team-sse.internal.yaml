@@ -7,8 +7,3 @@ cem_linux::config:
   control_configs:
     ensure_auditd_is_installed:
       space_left_action: 'syslog'
-    ensure_time_synchronization_is_in_use:
-      preferred_package: ntp
-      timeservers:
-        - 'server 0.pool.ntp.org iburst maxpoll 10'
-        - 'server 1.pool.ntp.org iburst maxpoll 10'

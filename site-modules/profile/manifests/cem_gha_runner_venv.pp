@@ -42,7 +42,6 @@ class profile::cem_gha_runner_venv inherits profile::cem_gha_runner_venv::global
   systemd::unit_file { $profile::cem_gha_runner_venv::global::runner_svc_unit_file:
     ensure  => present,
     enable  => true,
-    active  => true,
     content => epp('profile/cem_gha_runner_venv/actions.runner.service.epp', {
       'runner_user'    => $profile::cem_gha_runner_venv::global::runner_user,
       'runner_svc_dir' => $profile::cem_gha_runner_venv::global::runner_svc_dir,
