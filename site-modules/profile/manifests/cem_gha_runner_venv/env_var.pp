@@ -25,7 +25,7 @@ define profile::cem_gha_runner_venv::env_var (
       ensure  => present,
       path    => '/etc/environment',
       line    => "${key}=${value}",
-      match   => "^${key}\=",
+      match   => "^${key}=",
       replace => true,
     }
   }
@@ -38,7 +38,7 @@ define profile::cem_gha_runner_venv::env_var (
           ensure  => present,
           path    => $efp,
           line    => "${key}=${value}",
-          match   => "^${key}\=",
+          match   => "^${key}=",
           replace => true,
         }
       }
