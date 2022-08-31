@@ -7,3 +7,8 @@ cem_linux::config:
   control_configs:
     ensure_auditd_is_installed:
       space_left_action: 'syslog'
+    ensure_only_strong_ciphers_are_used:
+      ciphers:
+        - 'aes128-ctr'
+        - 'aes192-ctr'
+        - 'aes256-ctr'
