@@ -7,10 +7,6 @@ cem_linux::config:
   profile: 'server'
   level: '2'
   control_configs:
-    ensure_time_synchronization_is_in_use:
-      preferred_package: 'ntp'
-      timeservers:
-        - 'server time.nist.gov iburst maxpoll 10'
     ensure_system_wide_crypto_policy_is_future_or_fips:
       system_crypto_policy: 'DEFAULT'
     ensure_permissions_on_etcsshsshd_config_are_configured:
