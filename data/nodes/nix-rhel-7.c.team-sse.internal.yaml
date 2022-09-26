@@ -7,3 +7,19 @@ cem_linux::config:
   control_configs:
     ensure_auditd_is_installed:
       space_left_action: 'syslog'
+    ensure_permissions_on_etcsshsshd_config_are_configured:
+      allow_users:
+        - heston_snodgrass_puppet_com
+        - curtis_edge_puppet_com
+        - tu_vu_puppet_com
+    ensure_only_strong_ciphers_are_used:
+      ciphers:
+        - aes256-ctr
+        - aes192-ctr
+        - aes128-ctr
+    ensure_only_strong_key_exchange_algorithms_are_used:
+      kex_algorithms:
+        - ecdh-sha2-nistp521
+        - ecdh-sha2-nistp384
+        - ecdh-sha2-nistp256
+        - diffie-hellman-group-exchange-sha256

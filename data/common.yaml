@@ -12,3 +12,10 @@ pe_r10k::forge_settings:
   baseurl: 'https://forgeapi.puppet.com'
   authorization_token: 'Bearer 1a5659e21d83616a1ab75fb334846dae243d39c709833341eaa5548753fc8342'
 
+lookup_options:
+  cem_linux::config:
+    merge:
+      strategy: deep
+      merge_hash_arrays: true
+  cem_linux::grub2_superuser_password:
+    convert_to: 'Sensitive'
