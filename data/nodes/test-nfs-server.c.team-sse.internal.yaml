@@ -1,0 +1,5 @@
+---
+profile::nfs_server::export_dir: '/test_share'
+profile::nfs_server::test_file_name: 'test_file'
+profile::nfs_server::test_file_content: 'Hello World'
+profile::nfs_server::export_clients: '10.180.0.0/24(rw,insecure,async,no_root_squash) localhost(rw)'

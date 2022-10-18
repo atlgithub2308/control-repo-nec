@@ -36,4 +36,4 @@ mod 'puppetlabs-powershell', '5.0.0'
 mod 'dsc-auditpolicydsc', '1.4.0-0-4'
 mod 'dsc-networkingdsc', '8.1.0-0-1'
 mod 'dsc-securitypolicydsc', '2.10.0-0-3'
-
+mod 'derdanne-nfs', '2.1.8'
