@@ -2,4 +2,5 @@
 cem_linux::benchmark: 'stig'
 cem_linux::regenerate_grub2_config: true
 cem_linux::config:
-  level: 'cat-1'
+  level: '1'
+  profile: 'classified'
