@@ -3,6 +3,8 @@ cem_windows::benchmark: 'cis'
 cem_windows::config:
   ignore:
     - 'c2_3_1_1'
+    - 'c18_9_102_2_1'
+    - 'c18_9_102_2_3'
   control_configs:
     c18_9_45_4_1_2:
       default_for_all_rules: 'Audit'
@@ -12,5 +14,9 @@ cem_windows::config:
     c2_2_26:
       users:
         - 'BUILTIN\Guests'
+    c2_3_8_1:
+      dsc_microsoft_network_client_digitally_sign_communications_always: Disabled
+    c2_3_9_2:
+        dsc_microsoft_network_server_digitally_sign_communications_always: Disabled
 cem_windows::benchmarks::cis::allow_local_account_rdp: true
 
