@@ -6,6 +6,8 @@ cem_windows::config:
     - 'c18_9_102_2_1'
     - 'c18_9_102_2_3'
   control_configs:
+    c18_9_65_3_9_3:
+      data: 0
     c18_9_45_4_1_2:
       default_for_all_rules: 'Audit'
     c2_2_21:
