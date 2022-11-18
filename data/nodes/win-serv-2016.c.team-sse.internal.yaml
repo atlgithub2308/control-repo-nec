@@ -37,8 +37,8 @@ cem_windows::config:
       data: 0 # Disable FW
     c2_2_21:
       users:
-       - "Builtin\Guests"
+       - "Builtin\\Guests"
     c2_2_26:
       users:
-      - "Builtin\Guests"
+      - "Builtin\\Guests"
 cem_windows::benchmarks::cis::allow_local_account_rdp: true
