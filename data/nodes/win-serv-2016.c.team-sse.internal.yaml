@@ -5,26 +5,35 @@ cem_windows::config:
     - 'c2_3_1_1'
     - 'c18_9_102_2_1'
     - 'c18_9_102_2_3'
+    - c9_1_2
+    - c9_1_3
+    - c9_1_4
+    - c9_1_5
+    - c9_1_6
+    - c9_1_7
+    - c9_1_8
+    - c9_2_2
+    - c9_2_3
+    - c9_2_4
+    - c9_2_5
+    - c9_2_6
+    - c9_2_7
+    - c9_2_8
+    - c9_3_2
+    - c9_3_3
+    - c9_3_4
+    - c9_3_5
+    - c9_3_6
+    - c9_3_7
+    - c9_3_8
+    - c9_3_9
+    - c9_3_10
   control_configs:
-    c18_9_65_3_2_1:
-      data: 0 # Allow multiple RDP sessions per user
-    c18_9_65_3_9_3:
-      data: 1 # Negotiate TLS for RDP
-    c18_9_65_3_9_4:
-      data: 0 # Disable NLA for RDP
-    c18_9_65_3_9_5:
-      data: 0 # Set reequired RDP encryption to lowest level
-    c18_9_45_4_1_2:
-      default_for_all_rules: 'Audit'
-    c2_2_21:
-      users:
-        - 'BUILTIN\Guests'
-    c2_2_26:
-      users:
-        - 'BUILTIN\Guests'
-    c2_3_8_1:
-      dsc_microsoft_network_client_digitally_sign_communications_always: Disabled
-    c2_3_9_2:
-      dsc_microsoft_network_server_digitally_sign_communications_always: Disabled
+    c9_1_1:
+      data: 0 # Disable FW
+    c9_2_1:
+      data: 0 # Disable FW
+    c9_3_1:
+      data: 0 # Disable FW
 cem_windows::benchmarks::cis::allow_local_account_rdp: true
 
