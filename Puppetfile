@@ -7,7 +7,7 @@ mod 'cem_linux',
   :ref => 'main'
 mod 'cem_windows',
   :git => 'git@github.com:puppetlabs/puppetlabs-cem_windows.git',
-  :ref => 'main'
+  :ref => 'cem1299'
 mod 'puppetlabs-apt', '8.1.0'
 mod 'puppetlabs-augeas_core', '1.1.1'
 mod 'puppetlabs-cd4pe', '3.2.4'
