@@ -2,5 +2,13 @@
 cem_linux::benchmark: 'stig'
 cem_linux::regenerate_grub2_config: true
 cem_linux::config:
-  level: '1'
-  profile: 'classified'
+  mac: '1'
+  confidentiality: 'public'
+  control_configs:
+    'V-204444':
+      privileged_users:
+        - 'testadmin1'
+        - 'testadmin2'
+      non_privileged_users:
+        - 'testuser1'
+        - 'testuser2'
