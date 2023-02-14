@@ -1,4 +1,9 @@
 ---
+lookup_options:
+  cem_linux::config:
+    merge:
+      strategy: deep
+      knockout_prefix: '!'
 puppet_enterprise::master::code_manager::git_settings:
   repositories:
     - remote: "git@github.com:puppetlabs/sse-team-control-repo.git"

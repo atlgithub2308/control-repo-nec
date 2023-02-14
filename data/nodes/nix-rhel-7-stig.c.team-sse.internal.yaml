@@ -4,3 +4,11 @@ cem_linux::regenerate_grub2_config: true
 cem_linux::config:
   mac: '1'
   confidentiality: 'public'
+  control_configs:
+    'V-204444':
+      privileged_users:
+        - 'testadmin1'
+        - 'testadmin2'
+      non_privileged_users:
+        - 'testuser1'
+        - 'testuser2'

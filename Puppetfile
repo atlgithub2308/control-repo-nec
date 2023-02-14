@@ -4,7 +4,7 @@ forge 'https://forge.puppet.com'
 # Versions should be updated to be the latest at the time you start
 mod 'cem_linux',
   :git => 'git@github.com:puppetlabs/puppetlabs-cem_linux.git',
-  :ref => 'main'
+  :ref => 'cem1317'
 mod 'cem_windows',
   :git => 'git@github.com:puppetlabs/puppetlabs-cem_windows.git',
   :ref => 'main'
@@ -13,9 +13,10 @@ mod 'puppetlabs-augeas_core', '1.1.1'
 mod 'puppetlabs-cd4pe', '3.2.4'
 mod 'puppetlabs-cd4pe_jobs', '1.6.0'
 mod 'puppetlabs-chocolatey', '6.1.1'
-mod 'puppetlabs-comply', '2.7.0'
+mod 'puppetlabs-comply', '2.9.0'
 mod 'puppetlabs-concat',  '6.4.0'
 mod 'puppetlabs-docker', '4.4.0'
+mod 'puppetlabs-exec', '2.2.0'
 mod 'puppetlabs-facts', '1.4.0'
 mod 'puppetlabs-firewall', '2.8.1'
 mod 'puppetlabs-hocon', '1.1.0'
