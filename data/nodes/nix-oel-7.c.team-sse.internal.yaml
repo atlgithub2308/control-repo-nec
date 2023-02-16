@@ -1,0 +1,13 @@
+cem_linux::benchmark: 'cis'
+cem_linux::regenerate_grub2_config: true
+cem_linux::config:
+  profile: 'server'
+  level: '2'
+  control_configs:
+    ensure_auditd_is_installed:
+      space_left_action: 'syslog'
+    ensure_permissions_on_etcsshsshd_config_are_configured:
+      allow_users:
+        - heston_snodgrass_puppet_com
+        - curtis_edge_puppet_com
+        - tu_vu_puppet_com
