@@ -1,0 +1,16 @@
+---
+cem_linux::benchmark: 'cis'
+cem_linux::set_grub2_password: true
+cem_linux::regenerate_grub2_config: true
+cem_linux::grub2_superuser: grub2su
+cem_linux::config:
+  profile: 'server'
+  level: '2'
+  control_configs:
+    ensure_system_wide_crypto_policy_is_future_or_fips:
+      system_crypto_policy: 'DEFAULT'
+    ensure_permissions_on_etcsshsshd_config_are_configured:
+      allow_users:
+        - heston_snodgrass_puppet_com
+        - curtis_edge_puppet_com
+        - tu_vu_puppet_com
