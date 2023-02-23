@@ -103,7 +103,7 @@ class profile::win_serv_2022_dsc_test {
     dsc_account_lockout_duration                             => 30,
     dsc_account_lockout_threshold                            => 5,
     dsc_enforce_password_history                             => 24,
-    dsc_enforce_user_logon_restrictions                      => 'Enabled',
+    dsc_enforce_user_logon_restrictions                      => 'Disabled',
     dsc_maximum_lifetime_for_service_ticket                  => undef,
     dsc_maximum_lifetime_for_user_ticket_renewal             => undef,
     dsc_maximum_password_age                                 => 365,
