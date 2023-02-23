@@ -66,7 +66,7 @@ class profile::win_serv_2022_dsc_test {
     dsc_network_security_do_not_store_lan_manager_hash_value_on_next_password_change => 'Enabled',
     dsc_network_security_force_logoff_when_logon_hours_expire => 'Enabled',
     dsc_network_security_lan_manager_authentication_level => 'Send LM & NTLM - use NTLMv2 session security if negotiated',
-    dsc_network_security_ldap_client_signing_requirements => 'Negotiate signing',
+    dsc_network_security_ldap_client_signing_requirements => 'Negotiate Signing',
     dsc_network_security_minimum_session_security_for_ntlm_ssp_based_including_secure_rpc_clients => 'Require NTLMv2 session security',
     dsc_network_security_minimum_session_security_for_ntlm_ssp_based_including_secure_rpc_servers => 'Require NTLMv2 session security',
     dsc_network_security_restrict_ntlm_add_remote_server_exceptions_for_ntlm_authentication => undef,
