@@ -89,7 +89,7 @@ class profile::win_serv_2022_dsc_test {
     dsc_user_account_control_admin_approval_mode_for_the_built_in_administrator_account => 'Enabled',
     dsc_user_account_control_allow_uiaccess_applications_to_prompt_for_elevation_without_using_the_secure_desktop => 'Enabled',
     dsc_user_account_control_behavior_of_the_elevation_prompt_for_administrators_in_admin_approval_mode => 'Prompt for consent on the secure desktop',
-    dsc_user_account_control_behavior_of_the_elevation_prompt_for_standard_users => 'Prompt for consent on the secure desktop',
+    dsc_user_account_control_behavior_of_the_elevation_prompt_for_standard_users => 'Prompt for credentials on the secure desktop',
     dsc_user_account_control_detect_application_installations_and_prompt_for_elevation => 'Enabled',
     dsc_user_account_control_only_elevate_executables_that_are_signed_and_validated => 'Disabled',
     dsc_user_account_control_only_elevate_uiaccess_applications_that_are_installed_in_secure_locations => 'Disabled',
