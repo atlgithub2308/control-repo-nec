@@ -2,7 +2,7 @@
 class profile::win_serv_2022_dsc_test {
   # lint:ignore:140chars
   # lint:ignore:arrow_alignment
-  class { 'cem_windows::utils::securityoption_wrapper':
+  dsc_securityoption { 'CEM - DSC SecurityOption':
     dsc_accounts_administrator_account_status => 'Disabled',
     dsc_accounts_block_microsoft_accounts => 'Users cant add or log on with Microsoft accounts',
     dsc_accounts_guest_account_status => 'Disabled',
