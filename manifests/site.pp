@@ -29,3 +29,11 @@ node default {
   # Example:
   #   class { 'my_class': }
 }
+
+node necpuppet.atldemo.net {
+
+  user { 'necuser1':
+    ensure => 'present',
+  }
+
+}
