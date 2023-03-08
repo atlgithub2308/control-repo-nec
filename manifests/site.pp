@@ -31,7 +31,7 @@ node default {
 }
 
 node necpuppet.atldemo.net {
-
+  include cem_linux
   user { 'necuser1':
     ensure => 'present',
   }
