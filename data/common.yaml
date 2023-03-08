@@ -1,9 +1,9 @@
 ---
-lookup_options:
-  cem_linux::config:
-    merge:
-      strategy: deep
-      knockout_prefix: '!'
+#lookup_options:
+#  cem_linux::config:
+#    merge:
+#      strategy: deep
+#      knockout_prefix: '!'
 #puppet_enterprise::master::code_manager::git_settings:
 #  repositories:
 #    - remote: "git@github.com:puppetlabs/sse-team-control-repo.git"
@@ -13,6 +13,6 @@ lookup_options:
 #    - remote: "git@github.com:puppetlabs/puppetlabs-cem_windows.git"
 #      private_key: "/etc/puppetlabs/puppetserver/ssh/id-abide_windows.rsa"
  
-pe_r10k::forge_settings:
-  baseurl: 'https://forgeapi.puppet.com'
-  authorization_token: 'Bearer 1a5659e21d83616a1ab75fb334846dae243d39c709833341eaa5548753fc8342'
+#pe_r10k::forge_settings:
+#  baseurl: 'https://forgeapi.puppet.com'
+#  authorization_token: 'Bearer 1a5659e21d83616a1ab75fb334846dae243d39c709833341eaa5548753fc8342'
