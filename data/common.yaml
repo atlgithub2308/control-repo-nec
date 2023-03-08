@@ -13,6 +13,12 @@
 #    - remote: "git@github.com:puppetlabs/puppetlabs-cem_windows.git"
 #      private_key: "/etc/puppetlabs/puppetserver/ssh/id-abide_windows.rsa"
  
+#pe_r10k::forge_settings:
+#  baseurl: 'https://forgeapi.puppet.com'
+#  authorization_token: 'Bearer 1a5659e21d83616a1ab75fb334846dae243d39c709833341eaa5548753fc8342'
+
 pe_r10k::forge_settings:
+  authorization_token: 'Bearer f51d42e43ee626426e7a20440db78127b1a508d8ff8749bbaf800397de7b4708'
   baseurl: 'https://forgeapi.puppet.com'
-  authorization_token: 'Bearer 1a5659e21d83616a1ab75fb334846dae243d39c709833341eaa5548753fc8342'
+puppet_enterprise::master::code_manager::forge_settings:
+  authorization_token: 'Bearer f51d42e43ee626426e7a20440db78127b1a508d8ff8749bbaf800397de7b4708'
