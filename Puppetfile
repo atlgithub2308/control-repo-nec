@@ -2,12 +2,12 @@ forge 'https://forge.puppet.com'
 
 # Modules from the Puppet Forge
 # Versions should be updated to be the latest at the time you start
-mod 'cem_linux',
-  :git => 'git@github.com:puppetlabs/puppetlabs-cem_linux.git',
-  :ref => 'main'
-mod 'cem_windows',
-  :git => 'git@github.com:puppetlabs/puppetlabs-cem_windows.git',
-  :ref => 'main'
+#mod 'cem_linux',
+#  :git => 'git@github.com:puppetlabs/puppetlabs-cem_linux.git',
+#  :ref => 'main'
+#mod 'cem_windows',
+#  :git => 'git@github.com:puppetlabs/puppetlabs-cem_windows.git',
+#  :ref => 'main'
 mod 'puppetlabs-apt', '8.1.0'
 mod 'puppetlabs-augeas_core', '1.1.1'
 mod 'puppetlabs-cd4pe', '3.2.4'
